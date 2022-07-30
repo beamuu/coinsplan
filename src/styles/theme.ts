@@ -11,6 +11,15 @@ import {
   brand700,
   brand800,
   brandDarker,
+  coinsplan100,
+  coinsplan200,
+  coinsplan300,
+  coinsplan400,
+  coinsplan500,
+  coinsplan600,
+  coinsplan700,
+  coinsplan800,
+  coinsplan900,
 } from "./color";
 import { mode } from "@chakra-ui/theme-tools";
 const config = {
@@ -21,39 +30,67 @@ const config = {
 const styles = {
   global: (props: any) => ({
     body: {
-      bg: mode("white", "gray.900")(props),
+      bg: mode("background.white", "background.dark")(props),
     },
   }),
 };
 
 const colors = {
-  brand: {
-    100: brand,
-    200: brandDarker,
+  coinsplan: {
+    fix: {
+      100: coinsplan500,
+      200: coinsplan500,
+      300: coinsplan500,
+      400: coinsplan500,
+      500: coinsplan500,
+      600: coinsplan500,
+      700: coinsplan500,
+      800: coinsplan500,
+      900: coinsplan500,
+    },
+    100: coinsplan100,
+    200: coinsplan200,
+    300: coinsplan300,
+    400: coinsplan400,
+    500: coinsplan500,
+    600: coinsplan600,
+    700: coinsplan700,
+    800: coinsplan800,
+    900: coinsplan900,
   },
-  main: {
-    50: brand50,
-    100: brand100,
-    200: brand200,
-    300: brand300,
-    400: brand400,
-    500: brand500,
-    600: brand600,
-    700: brand700,
-    800: brand800,
+
+  button: {
+    blackAndWhite: {
+      100: "white",
+      200: "white",
+      300: "white",
+      400: "white",
+      500: "black",
+      600: "black",
+      700: "black",
+      800: "black",
+      900: "black",
+    },
   },
-  mainFix: {
-    50: brand50,
-    100: brand100,
-    200: brand200,
-    300: brand400,
-    400: brand400,
-    500: brand400,
-    600: brand400,
-    700: brand700,
-    800: brand800,
+  background: {
+    light: "white",
+    dark: "#0a0b0d",
   },
-  darkBackground: "#0a0b0d",
+  layer: {
+    light: "#00000012",
+    dark: "#ffffff12",
+    colorScheme: {
+      100: "layer.light",
+      200: "layer.light",
+      300: "layer.light",
+      400: "layer.light",
+      500: "layer.dark",
+      600: "layer.dark",
+      700: "layer.dark",
+      800: "layer.dark",
+      900: "layer.dark",
+    }
+  },
 };
 
 const components = {
@@ -63,7 +100,7 @@ const components = {
       _focus: {
         boxShadow: "none",
       },
-      borderRadius: 10,
+      borderRadius: 8,
     },
     sizes: {
       sm: {
@@ -72,11 +109,11 @@ const components = {
       },
       md: {
         fontSize: "14px",
-        fontWeight: 500,
+        fontWeight: 600,
       },
       lg: {
         fontSize: "1rem",
-        fontWeight: 500,
+        fontWeight: 600,
       },
       xl: {
         fontSize: "1rem",
@@ -89,11 +126,17 @@ const components = {
     baseStyle: {
       fontWeight: 600,
     },
+    variants: {
+      head1: {
+        fontWeight: 500,
+        fontSize: 28
+      }
+    }
   },
   Link: {
     baseStyle: {
-      color: "main.500"
-    }
+      color: "coinsplan.500",
+    },
   },
   Input: {
     baseStyle: {
@@ -117,8 +160,8 @@ const breakpoints = {
 };
 
 const fonts = {
-  body: `Inter, Helvetica, sans-serif`,
-  heading: `Inter, Helvetica, sans-serif`,
+  body: `Poppins, Helvetica, sans-serif`,
+  heading: `Poppins, Helvetica, sans-serif`,
 };
 
 const overrides = {

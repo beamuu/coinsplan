@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import Head from "next/head";
 
-import WalletProvider from "../../src/views/app/providers/Wallet";
+import WalletProvider from "../../src/providers/Wallet";
 import SignupPage from "../../src/views/signup";
 
 const Signup: NextPage = () => {
@@ -10,9 +10,7 @@ const Signup: NextPage = () => {
       <Head>
         <title>Coinsplan - Create an account</title>
       </Head>
-      <WalletProvider>
-        <SignupPage />
-      </WalletProvider>
+      <SignupPage />
     </>
   );
 };

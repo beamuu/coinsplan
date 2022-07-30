@@ -1,17 +1,8 @@
-import {
-  Box,
-  Button,
-  Center,
-  CircularProgress,
-  Flex,
-  Heading,
-  ModalBody,
-  Text,
-} from "@chakra-ui/react";
+import { Box, IconButton, ModalBody } from "@chakra-ui/react";
 import { FC, useEffect, useRef, useState } from "react";
 import { Html5Qrcode } from "html5-qrcode";
 import { ethers } from "ethers";
-import { shortenAddress } from "../../../../utils/address";
+import { MdFlipCameraIos } from "react-icons/md";
 
 interface Html5QrcodePluginInterface {
   onClose: () => void;
@@ -90,24 +81,24 @@ const Html5QrcodePlugin: FC<Html5QrcodePluginInterface> = ({
 
   return (
     <>
-      {!isScannerOpen ? (
-        <ModalBody>
-        </ModalBody>
-      ) : null}
+      {!isScannerOpen ? <ModalBody></ModalBody> : null}
 
       <Box position="relative">
-        <Button
-          size="sm"
+        <IconButton
+          aria-label="cam-flip-button"
+          size="md"
           fontSize="12px"
           position="absolute"
+          bg="white"
+          rounded="full"
+          _hover={{ bg: undefined }}
           top="6px"
           right="6px"
           zIndex={56}
           onClick={() => setFlip(!flip)}
-          opacity={0.7}
         >
-          Flip video
-        </Button>
+          <MdFlipCameraIos size="22px" />
+        </IconButton>
         <Box
           id="scanner-1"
           className={flip ? "flip" : ""}

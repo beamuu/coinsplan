@@ -32,7 +32,7 @@ import QrCodeModal from "./components/QrCodeModal";
 const Schedule: FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isQrCodeModalOpen, setIsQrCodeModalOpen] = useState(false);
-  const { data: account } = useAccount();
+  const { address } = useAccount();
 
   const onModalClose = () => setIsModalOpen(false);
 
@@ -156,12 +156,12 @@ const Schedule: FC = () => {
           <Text px="4px" fontSize="12px" opacity={0.6}>
             Tap on the input above or the calendar icon to pick a time.
           </Text>
-          {account === null ? (
+          {!address ? (
             <PleaseConnectButton />
           ) : (
             <Button
               type="button"
-              colorScheme="main"
+              colorScheme="coinsplan"
               _hover={{ bg: undefined }}
               _active={{ bg: undefined }}
               w="full"

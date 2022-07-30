@@ -8,6 +8,7 @@ import {
   Heading,
   Input,
   Progress,
+  SimpleGrid,
   Text,
   useColorModeValue,
   VStack,
@@ -16,11 +17,23 @@ import ScreenFixAuthTemplate from "../../components/structures/ScreenFixAuthTemp
 import { useAccount, useSignMessage } from "wagmi";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
+import EmailVerify from "./components/EmailVerify";
+import SelectProfilePic from "./components/SelectProfilePic";
 
 const SignupPage: FC = () => {
-  const { data } = useAccount();
+  const { address } = useAccount();
   const [signComplete, setSignComplete] = useState<boolean>(false);
   const [isSigningIn, setIsSigningIn] = useState<boolean>(false);
+  const [step, setStep] = useState<number>(0);
+
+  const styles = {
+    borderColor: useColorModeValue("#00000030", "#ffffff30"),
+    input: {
+      fontWeight: 500,
+      fontSize: 16
+    }
+  };
+
   const {
     isLoading: isSignLoading,
     isError: isSignError,
@@ -33,6 +46,12 @@ const SignupPage: FC = () => {
 
   const handleDigitalSignatureSign = async () => {
     signMessage();
+  };
+
+  const signin = () => {
+    setTimeout(() => {
+      setStep(1);
+    }, 2000);
   };
 
   useEffect(() => {
@@ -48,8 +67,30 @@ const SignupPage: FC = () => {
       alert(signMessageData);
       setSignComplete(false);
       setIsSigningIn(true);
+      signin();
     }
   }, [signComplete]);
+
+  if (step === 1) {
+    return (
+      <ScreenFixAuthTemplate>
+        <Container
+          maxW="container.sm"
+          minH="100vh"
+          py="6%"
+          display="flex"
+          justifyContent="center"
+        >
+          <EmailVerify setStep={(s: number) => setStep(s)}/>
+        </Container>
+      </ScreenFixAuthTemplate>
+    );
+  }
+  if (step === 2) {
+    return (
+      <SelectProfilePic setStep={(s: number) => setStep(s)}/>
+    )
+  }
 
   return (
     <ScreenFixAuthTemplate>
@@ -63,7 +104,7 @@ const SignupPage: FC = () => {
         <Flex
           w="full"
           border="1px solid"
-          borderColor={useColorModeValue("#00000030", "#ffffff30")}
+          borderColor={styles.borderColor}
           rounded={20}
           py="10%"
           px="8%"
@@ -80,7 +121,7 @@ const SignupPage: FC = () => {
               top={0}
               left={0}
               right={0}
-              colorScheme="main"
+              colorScheme="coinsplan.fix"
             />
           ) : null}
 
@@ -94,7 +135,7 @@ const SignupPage: FC = () => {
               Create an account
             </Heading>
             <VStack my="30px" alignItems="start" spacing={8}>
-              {data === null ? (
+              {!address ? (
                 <Text my="20px">
                   Please connect your crypto wallet to continue the account sign
                   up process.
@@ -105,29 +146,45 @@ const SignupPage: FC = () => {
                 </Text>
               )}
               <ConnectButton chainStatus="icon" />
-              {data === null ? null : (
-                <VStack spacing={7} alignItems="start" w="full">
-                  <Heading size="sm">What should we call you?</Heading>
-                  <Input placeholder="Ex. Beam, Elon Dust" w="full" />
-                  <Heading size="sm">Email address</Heading>
-                  <Input placeholder="email@example.com" w="full" type="email"/>
-                  <Checkbox mt="40px !important" colorScheme="main">
+              {!address ? null : (
+                <>
+                  <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} gap={6}>
+                    <Box>
+                      <Heading size="sm" mb={3}>
+                        Firstname
+                      </Heading>
+                      <Input w="full" size="lg" {...styles.input}/>
+                    </Box>
+                    <Box>
+                      <Heading size="sm" mb={3}>
+                        Lastname
+                      </Heading>
+                      <Input w="full" size="lg" {...styles.input}/>
+                    </Box>
+                  </SimpleGrid>
+                  <Box w="full">
+                    <Heading size="sm" mb={3}>
+                      Email
+                    </Heading>
+                    <Input type="email" w="full" size="lg" {...styles.input}/>
+                  </Box>
+                  <Checkbox mt="40px !important" colorScheme="coinsplan.fix">
                     <Text fontSize="14px">
                       I agree to the terms and conditions and privacy policy.
                     </Text>
                   </Checkbox>
-                </VStack>
+                </>
               )}
             </VStack>
           </Box>
 
           <VStack spacing={5}>
-            {data === null ? null : (
+            {!address ? null : (
               <Button
                 size="xl"
                 w="full"
                 color="white"
-                bg="main.400"
+                colorScheme="coinsplan.fix"
                 _hover={{ bg: undefined }}
                 _focus={{ bg: undefined }}
                 onClick={handleDigitalSignatureSign}

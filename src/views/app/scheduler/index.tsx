@@ -1,7 +1,7 @@
 import { Box, Heading, Input, useColorModeValue } from "@chakra-ui/react";
 import { FC } from "react";
 import Content from "../../../components/structures/Content";
-import AppTemplate from "../components/AppTemplate";
+import AppTemplate from "../../../components/AppTemplate";
 import Schedule from "./Schedule";
 
 const SchedulerPage: FC = () => {

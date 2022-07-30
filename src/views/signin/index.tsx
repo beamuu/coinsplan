@@ -17,7 +17,7 @@ import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { useRouter } from "next/router";
 
 const SigninPage: FC = () => {
-  const { data } = useAccount();
+  const { address } = useAccount();
   const [signComplete, setSignComplete] = useState<boolean>(false);
   const [isSigningIn, setIsSigningIn] = useState<boolean>(false);
   const router = useRouter()
@@ -87,7 +87,7 @@ const SigninPage: FC = () => {
               top={0}
               left={0}
               right={0}
-              colorScheme="mainNonDynamic"
+              colorScheme="coinsplan"
             />
           ) : null}
 
@@ -100,7 +100,7 @@ const SigninPage: FC = () => {
               Sign in to Coinsplan
             </Heading>
             <VStack my="30px" alignItems="start" spacing={8}>
-              {data === null ? (
+              {!address ? (
                 <Text my="20px">
                   You must connect your crypto wallet to sign in to Coinsplan
                   service.
@@ -113,12 +113,12 @@ const SigninPage: FC = () => {
           </Box>
 
           <VStack spacing={5}>
-            {data === null ? null : (
+            {!address ? null : (
               <Button
                 size="xl"
                 w="full"
                 color="white"
-                bg="main.400"
+                colorScheme="coinsplan.fix"
                 _hover={{ bg: undefined }}
                 _focus={{ bg: undefined }}
                 onClick={handleDigitalSignatureSign}

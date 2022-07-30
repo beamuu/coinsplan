@@ -42,7 +42,7 @@ const HomePage: FC = () => {
             <Button
               size="lg"
               w={{ sm: "full", lg: "auto" }}
-              colorScheme="main"
+              colorScheme="coinsplan"
               onClick={() => router.push("/app/scheduler")}
             >
               Schedule now

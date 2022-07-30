@@ -33,7 +33,12 @@ const QrCodeModal: FC<QrCodeModalInterface> = ({ open, setOpen }) => {
     }
   }, [open]);
   return (
-    <Modal isOpen={open} onClose={() => setOpen(false)} isCentered>
+    <Modal
+      isOpen={open}
+      onClose={() => setOpen(false)}
+      isCentered
+      motionPreset="slideInBottom"
+    >
       <ModalOverlay />
       <ModalContent
         rounded={22}
@@ -101,7 +106,7 @@ const QrCodeModal: FC<QrCodeModalInterface> = ({ open, setOpen }) => {
             <ModalFooter gap="10px">
               <Button onClick={reset}>Try another</Button>
               <Button
-                bg="main.400"
+                bg="coinsplan.400"
                 color="white"
                 _hover={noButtonEffect}
                 _active={noButtonEffect}

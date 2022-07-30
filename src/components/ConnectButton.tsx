@@ -18,7 +18,7 @@ const CustomConnectButton: FC<ICustomConnectButton> = ({
   height,
 }) => {
   const buttonStyles = {
-    buttonBg: useColorModeValue("gray.100", "gray.700"),
+    buttonBg: useColorModeValue("gray.100", "gray.900"),
     buttonColor: useColorModeValue("black", "white"),
   };
   return (
@@ -48,7 +48,7 @@ const CustomConnectButton: FC<ICustomConnectButton> = ({
                   <Button
                     onClick={openConnectModal}
                     type="button"
-                    bg="main.400"
+                    bg="coinsplan.400"
                     color="white"
                     _hover={{ bg: undefined }}
                     _active={{ bg: undefined }}

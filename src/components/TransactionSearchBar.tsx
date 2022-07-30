@@ -5,7 +5,7 @@ import { FC } from "react";
 const TransactionSearchBar: FC = () => {
 
   const searchBarStyles = {
-    bg: useColorModeValue("gray.100", "gray.700")
+    bg: useColorModeValue("gray.100", "gray.900")
   }
 
   return (

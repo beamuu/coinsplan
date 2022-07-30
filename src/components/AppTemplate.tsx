@@ -8,13 +8,13 @@ interface IAppTemplate {
 }
 const AppTemplate: FC<IAppTemplate> = ({ children }) => {
     return (
-        <WalletProvider>
-            <Navbar />
+        <>
+            <Navbar variant="modern"/>
             
             {
                 children
             }
-        </WalletProvider>
+        </>
     )
 }
 export default AppTemplate
