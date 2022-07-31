@@ -26,8 +26,8 @@ const SelectProfilePic: FC<SelectProfilePicProps> = ({ setStep }) => {
   }
 
   const selectedStyles = {
-    outline: "6px solid",
-    outlineColor: "#00f7be",
+    border: "6px solid",
+    borderColor: "#00f7be",
     boxShadow: "0 0 40px #00f7be90 !important",
   };
   const profileBaseStyles = {

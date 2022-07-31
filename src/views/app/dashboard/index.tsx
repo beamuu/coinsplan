@@ -40,7 +40,7 @@ const DashboardPage: FC = () => {
           borderWidth={{ sm: 0, md: 0, lg: 0, xl: "0 0 0 1px" }}
           minH={{ sm: "auto", md: "auto", lg: "100vh" }}
         >
-          <Box h="10px" bg="coinsplan.500" position="absolute" top={0} left={0} right={0}/>
+          <Box h="8px" bg="coinsplan.500" position="absolute" top={0} left={0} right={0} borderRadius="0 0 4px 4px"/>
           <Transactions />
           <Favorites />
         </GridItem>
