@@ -36,8 +36,11 @@ import ContentContainer from "./ContentContainer";
 import { FC, useState } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import { useAccount } from "wagmi";
+import { useRouter } from "next/router";
+import { routes } from "../../../../constants/routes";
 
 const Wallet: FC = () => {
+  const router = useRouter()
   const [isQroCdeModalOpen, setIsQrCodeOpen] = useState<boolean>(false);
   const { address } = useAccount();
   const tagProps = {
@@ -114,6 +117,7 @@ const Wallet: FC = () => {
           colorScheme="button.blackAndWhite"
           gap={2}
           fontSize={14}
+          onClick={() => router.push(routes.addFunds)}
         >
           {" "}
           Deposit stable coins now <ArrowForwardIcon />
@@ -170,6 +174,7 @@ const Wallet: FC = () => {
             fontSize={14}
             rounded="full"
             color="white"
+            onClick={() => router.push(routes.pay)}
           >
             Send Crypto <ArrowForwardIcon />
           </Button>

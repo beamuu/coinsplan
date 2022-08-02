@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box, useColorModeValue } from "@chakra-ui/react";
 import Head from "next/head";
 import { FC } from "react";
 import WalletProvider from "../providers/Wallet";
@@ -12,7 +12,7 @@ const AppTemplate: FC<IAppTemplate> = ({ children }) => {
   return (
     <>
       <Head>
-        <meta name="theme-color" content={coinsplan500} />
+        <meta name="theme-color" content={useColorModeValue("background.light", "background.dark")} />
       </Head>
       <Navbar variant="modern" />
 

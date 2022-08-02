@@ -12,6 +12,7 @@ import Content from "../../components/structures/Content";
 import StaticTemplate from "../../components/structures/StaticTemplate";
 import { useRouter } from "next/router";
 import SchedulerBanner from "./SchedulerBanner";
+import { routes } from "../../constants/routes";
 
 const HomePage: FC = () => {
   const router = useRouter();
@@ -43,11 +44,11 @@ const HomePage: FC = () => {
               size="lg"
               w={{ sm: "full", lg: "auto" }}
               colorScheme="coinsplan"
-              onClick={() => router.push("/app/scheduler")}
+              onClick={() => router.push(routes.scheduler)}
             >
               Schedule now
             </Button>
-            <Button size="lg" w={{ sm: "full", lg: "auto" }} onClick={() => router.push("/signup")}>
+            <Button size="lg" w={{ sm: "full", lg: "auto" }} onClick={() => router.push(routes.signup)}>
               Register wallet
             </Button>
           </HStack>

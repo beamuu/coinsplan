@@ -16,6 +16,7 @@ import { FC } from "react";
 import { Fade, Slide } from "react-awesome-reveal";
 import { profilePicUrl } from "../../../cdn/profile";
 import ScreenFixAuthTemplate from "../../../components/structures/ScreenFixAuthTemplate";
+import { routes } from "../../../constants/routes";
 
 interface WelcomeProps {
   setStep: (s: number) => void;
@@ -60,7 +61,7 @@ const Welcome: FC<WelcomeProps> = ({ setStep }) => {
           <VStack spacing={6}>
             <Button {...baseButtonStyles}>Quick Start Guide</Button>
             <Button {...baseButtonStyles}>Deposit stable coins</Button>
-            <Button {...baseButtonStyles} color="white" colorScheme="coinsplan.fix" onClick={() => router.push("/app/dashboard")}>
+            <Button {...baseButtonStyles} color="white" colorScheme="coinsplan.fix" onClick={() => router.push(routes.dashboard)}>
               Go to dashboard <ArrowForwardIcon />
             </Button>
           </VStack>

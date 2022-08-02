@@ -15,6 +15,7 @@ import { useAccount, useSignMessage } from "wagmi";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { useRouter } from "next/router";
+import { routes } from "../../constants/routes";
 
 const SigninPage: FC = () => {
   const { address } = useAccount();
@@ -36,7 +37,7 @@ const SigninPage: FC = () => {
   };
 
   const navigateToSignup = () => {
-    router.push("signup")
+    router.push(routes.signup)
   }
 
   useEffect(() => {
