@@ -1,6 +1,4 @@
 import {
-  Alert,
-  AlertIcon,
   Avatar,
   Box,
   Button,
@@ -11,6 +9,8 @@ import {
   Heading,
   IconButton,
   Input,
+  InputGroup,
+  InputRightElement,
   Text,
   useColorModeValue,
   VStack,
@@ -49,9 +49,9 @@ export const PaymentPage = () => {
   return (
     <AppTemplate>
       <QrCodeModal open={isQrCodeModalOpen} setOpen={setIsQrCodeModalOpen} />
-      <Container maxW="container.md" py={10} mt="60px">
+      <Container maxW="container.sm" py={10} mt="60px">
         <VStack spacing={6} alignItems="start">
-          <Heading fontWeight={500} size="lg">
+          <Heading fontWeight={600} size="lg">
             Send your Crypto
           </Heading>
           <Text fontSize={14} color="gray.500">
@@ -59,24 +59,13 @@ export const PaymentPage = () => {
             stable coins.
           </Text>
         </VStack>
-        <Alert
-          status="warning"
-          rounded={8}
-          fontWeight={600}
-          my={3}
-          fontSize={14}
-        >
-          <AlertIcon />
-          Please read! We recommended you not to transfer CPUSD by using any
-          unreliable applications. Please use Coinsplan for your safety.
-        </Alert>
         <Box my={10}>
           <Heading size="sm" mb={3}>
             Who is your recipient?
           </Heading>
           <Text fontSize={12} mb={3}>
             Ethereum Address (started with 0x) or Coinsplan ID (started with
-            cpac)
+            cp)
           </Text>
           <Button onClick={() => setShowAccountCard(!showAccountCard)} my={5}>
             Click Me - remove this button
@@ -85,7 +74,7 @@ export const PaymentPage = () => {
             <Flex alignItems="center">
               <Input
                 variant="unstyled"
-                placeholder="0x... or  cpac..."
+                placeholder="0x... or  cp..."
                 fontFamily="'DM Mono' !important"
                 fontWeight={500}
                 fontSize={18}
@@ -118,6 +107,25 @@ export const PaymentPage = () => {
               </Box>
             </Collapse>
           </Box>
+        </Box>
+        <Box my={10}>
+          <Heading size="sm" mb={3}>
+            How much?
+          </Heading>
+          <InputGroup justifyContent="space-between" alignItems="center" bg={useColorModeValue("gray.100", "gray.900")} py={3} px={5} rounded={6}>
+            <Input
+              variant="unstyled"
+              size="lg"
+              placeholder="0.00"
+              fontFamily="'DM Mono' !important"
+              fontWeight={500}
+              letterSpacing={1}
+            />
+              <Text fontWeight={600}>CPUSD</Text>
+          </InputGroup>
+          <Button w="full" colorScheme="coinsplan.fix" color="white" h="60px" my={10}>
+            Send CPUSD
+          </Button>
         </Box>
       </Container>
     </AppTemplate>

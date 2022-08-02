@@ -4224,6 +4224,14 @@ randombytes@^2.1.0:
   dependencies:
     safe-buffer "^5.1.0"
 
+react-awesome-reveal@^4.0.0-beta.2:
+  version "4.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/react-awesome-reveal/-/react-awesome-reveal-4.0.0-beta.2.tgz#83e41007cd3c37cc6381ff2d083fb43713ccd90c"
+  integrity sha512-6Ww3t+RKOCVULb2+zip6K5OQxbZWUSq5gJCB23NSsaIXAtTr02GBtY0b5G2LwmfOOjNbeCJT5B2viSm8XElSvg==
+  dependencies:
+    react-intersection-observer "^9.1.0"
+    react-is "^18.1.0"
+
 react-clientside-effect@^1.2.5:
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/react-clientside-effect/-/react-clientside-effect-1.2.6.tgz#29f9b14e944a376b03fb650eed2a754dd128ea3a"
@@ -4261,10 +4269,20 @@ react-icons@^4.3.1:
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.3.1.tgz#2fa92aebbbc71f43d2db2ed1aed07361124e91ca"
   integrity sha512-cB10MXLTs3gVuXimblAdI71jrJx8njrJZmNMEMC+sQu5B/BIOmlsAjskdqpn81y8UBVEGuHODd7/ci5DvoSzTQ==
 
+react-intersection-observer@^9.1.0:
+  version "9.4.0"
+  resolved "https://registry.yarnpkg.com/react-intersection-observer/-/react-intersection-observer-9.4.0.tgz#f6b6e616e625f9bf255857c5cba9dbf7b1825ec7"
+  integrity sha512-v0403CmomOVlzhqFXlzOxg0ziLcVq8mfbP0AwAcEQWgZmR2OulOT79Ikznw4UlB3N+jlUYqLMe4SDHUOyp0t2A==
+
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-is@^18.1.0:
+  version "18.2.0"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
+  integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
 
 react-query@4.0.0-beta.23:
   version "4.0.0-beta.23"

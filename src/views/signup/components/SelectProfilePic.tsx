@@ -22,7 +22,7 @@ const SelectProfilePic: FC<SelectProfilePicProps> = ({ setStep }) => {
   const router = useRouter();
 
   const handleSetProfile = () => {
-    router.push("/app/dashboard")
+    setStep(3)
   }
 
   const selectedStyles = {
@@ -39,11 +39,11 @@ const SelectProfilePic: FC<SelectProfilePicProps> = ({ setStep }) => {
 
   return (
     <ScreenFixAuthTemplate>
-      <Container maxW="container.md" minH="100vh" py="6%">
+      <Container maxW="container.md" h="100vh" py="6%">
         <Heading size="md" textAlign="center">
           Select you avatar
         </Heading>
-        <SimpleGrid mt={16} columns={{ sm: 3, md: 4, lg: 5 }} gap={14}>
+        <SimpleGrid mt={16} columns={{ sm: 3, md: 4, lg: 5 }} gap={4}>
           {Object.keys(profilePicUrl).map((key, index) => (
             <Image
               key={`profile-${index + 1}`}

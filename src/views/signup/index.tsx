@@ -19,6 +19,7 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import EmailVerify from "./components/EmailVerify";
 import SelectProfilePic from "./components/SelectProfilePic";
+import Welcome from "./components/Welcome";
 
 const SignupPage: FC = () => {
   const { address } = useAccount();
@@ -89,6 +90,12 @@ const SignupPage: FC = () => {
   if (step === 2) {
     return (
       <SelectProfilePic setStep={(s: number) => setStep(s)}/>
+    )
+  }
+
+  if (step === 3) {
+    return (
+      <Welcome setStep={(s: number) => setStep(s)}/>
     )
   }
 
